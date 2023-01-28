@@ -7,6 +7,7 @@ from automated_clean_code.exercise_20_histlib import (
     count_line_occurence,
     find_max_min_keys,
     get_filename_from_args,
+    print_max_min_line_occurrence_from_args,
     print_max_min_line_occurrence_from_file,
 )
 
@@ -63,6 +64,13 @@ def test_myoutput(capsys: Callable):
 
 def test_print_max_min_line_occurrence_from_file(capsys: Callable, simple_test_data_file: str):
     print_max_min_line_occurrence_from_file(simple_test_data_file)
+    captured = capsys.readouterr()
+    expected = "Min Key = 1 with count = 1\nMax Key = 3 with count = 3\n"
+    assert captured.out == expected
+
+
+def test_print_max_min_line_occurrence_from_args(capsys: Callable, simple_test_data_file: str):
+    print_max_min_line_occurrence_from_args([simple_test_data_file])
     captured = capsys.readouterr()
     expected = "Min Key = 1 with count = 1\nMax Key = 3 with count = 3\n"
     assert captured.out == expected

@@ -14,7 +14,18 @@ def main():
     Returns: None
 
     """
-    filename = get_filename_from_args(sys.argv)
+    print_max_min_line_occurrence_from_args(sys.argv)
+
+
+def print_max_min_line_occurrence_from_args(args: List[str]):
+    """
+
+    Print something.
+
+    Returns: None
+
+    """
+    filename = get_filename_from_args(args)
     print_max_min_line_occurrence_from_file(filename)
 
 
